@@ -1,0 +1,8 @@
+extends layout
+
+block content
+	h1 Ws di Replica
+	ul
+	each val in lista.sviluppo
+		li: a(href='../replica/ws/?id=#{val.nome}' value='#{val.url}') #{val.nome} 
+		

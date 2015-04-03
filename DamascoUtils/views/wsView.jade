@@ -1,0 +1,23 @@
+extends layout
+
+mixin smallInput(caption)
+	p.caption.line #{caption} 
+	input(id=caption, type="text").line.coolTextInput
+
+mixin fields(name, stuff)
+	.block 
+		p.bold=name
+		ul
+		each f, index in stuff
+			li.line: +smallInput(index)
+
+block content
+	a(href='../') repliche
+	h1= nome
+	if corpo
+		ul
+			form
+			each val, index in corpo
+				+fields(index, val) <br/>
+	else 
+		p.error Url non trovato. Impostarlo nel file listaWs.

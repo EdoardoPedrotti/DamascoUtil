@@ -1,0 +1,62 @@
+body {
+	padding: 50px;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background-color: #FFF8E7;
+}
+
+a {
+	color: #00B7FF;
+	font-weight: bold;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	list-style-type: none;
+	padding: 5px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.line {
+	float: left;
+	display: inline;
+}
+
+.block {
+	margin: 5px;
+	padding: 5px; float : left;
+	display: block;
+	background-color: #e5dfcf;
+	float: left
+}
+
+.error {
+	color: red;
+	font-weight: bold;
+	background-color: yellow;
+}
+
+.caption {
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: lowercase;
+	margin: 10px;
+}
+
+.coolTextInput {
+	padding: 10px;
+	border: solid 1px #00B7FF;
+	transition: box-shadow 0.3s, border 0.3s;
+	background-color: #e5dfcf;
+}
+
+/* .coolTextInpu input[type="text"]:focus,
+.coolTextInpuinput[type="text"].focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+} */
