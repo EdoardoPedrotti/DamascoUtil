@@ -1,15 +1,18 @@
 extends layout
 
 mixin smallInput(caption)
-	p.caption.line #{caption} 
+	p.caption.line #{caption}	
 	input(id=caption, type="text").line.coolTextInput
 
 mixin fields(name, stuff)
 	.block 
 		p.bold=name
 		ul
-		each f, index in stuff
-			li.line: +smallInput(index)
+			each f, index in stuff
+				if index=='item[]'
+					+fields(null, f) <br/> 
+				else 
+					li.line: +smallInput(index)
 
 block content
 	a(href='../') repliche

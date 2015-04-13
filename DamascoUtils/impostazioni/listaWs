@@ -1,0 +1,25 @@
+{
+	"sviluppo":{
+		"contratti": {
+			"nome": "contratti",
+			"url": "http://10.16.237.170:24462/Damasco/services/DMSGetContratto?wsdl"
+		},
+		"imprese":{
+			"nome":"imprese",
+			"url":""
+		},
+		"lcl":{
+			"nome":"lcl",
+			"url":""
+		},
+		"oda":{
+			"nome":"oda",
+			"url":""
+		}
+		
+	},
+	"collaudo":{
+		
+	}
+	
+}
