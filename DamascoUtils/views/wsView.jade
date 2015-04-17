@@ -24,7 +24,7 @@ mixin fieldList(name, stuff)
 block content
 	a(href='../') repliche
 	h1= nome
-	button(value='Invia' id='send' onclick="JSONTest()")
+	button(value='Invia' id='send' )
 	form( encoding='multipart/form-data')
 			if corpo
 				each val, index in corpo

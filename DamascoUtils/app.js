@@ -13,6 +13,8 @@ var multer = require('multer');
 var errorHandler = require('errorhandler');
 
 var app = express();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -28,7 +30,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(multer());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/replica', replica);
+app.use('/replica', replica(io));
 
 app.get('/', routes.index);
 app.get('/users', user.list);

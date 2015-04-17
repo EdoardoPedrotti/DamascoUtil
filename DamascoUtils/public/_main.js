@@ -1,6 +1,17 @@
 /**
  * New node file
  */
+
+
+try {
+	var socket = io();
+	socket.connect();
+} catch (e) {
+	// TODO: handle exception
+	console.log('dio boiaaaaaa' + e)
+}
+
+
 $(document).ready(function() { 
 	console.log('MAIN!!!! >:)');
 	$(".addButton").click(function(){
@@ -15,22 +26,29 @@ $(document).ready(function() {
 		console.log($(this).attr('id'));
 	});
 	
+	
+	
+	JSONTest = function() {
+
+	    var resultDiv = $("#resultDivContainer");
+	    
+	    var arguments = JSON.stringify(getArguments('.main'), null, 2);
+//	    var argumetns = getArguments('.main');
+	    console.log(JSON.stringify(arguments, null, 2));
+	    	
+	    socket.emit('req', arguments);
+//	    $('#hiddenInput').val(arguments);
+	//    
+//	    $('#hiddenSend').click();
+	    
+	};
+	
+	
+	$('#send').click(JSONTest);
 });
 
 
-JSONTest = function() {
 
-    var resultDiv = $("#resultDivContainer");
-    
-    var arguments = JSON.stringify(getArguments('.main'), null, 2);
-//    var argumetns = getArguments('.main');
-    console.log(JSON.stringify(arguments, null, 2));
-    	
-    $('#hiddenInput').val(arguments);
-    
-    $('#hiddenSend').click();
-    
-};
 
 
 function getArguments(selector) {
