@@ -6,15 +6,15 @@
 		},
 		"imprese":{
 			"nome":"imprese",
-			"url":""
+			"url":"http://10.16.237.170:24462/Damasco/services/DMSGetSocieta?wsdl"
 		},
 		"lcl":{
 			"nome":"lcl",
-			"url":""
+			"url":"http://10.16.237.170:24462/Damasco/services/DMSGetLCL?wsdl"
 		},
 		"oda":{
 			"nome":"oda",
-			"url":""
+			"url":"http://10.16.237.170:24462/Damasco/services/DMSGetOdASubappalto?wsdl"
 		}
 		
 	},

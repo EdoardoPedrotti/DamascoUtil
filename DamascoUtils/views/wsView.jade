@@ -1,26 +1,37 @@
 extends layout
 
-mixin smallInput(caption)
-	p.caption.line #{caption}	
-	input(id=caption, type="text").line.coolTextInput
+mixin smallInput(name, caption)
+	p.caption.line(id=caption) #{caption}	
+	input(id=caption, type="text", name=caption).line.coolTextInput
 
 mixin fields(name, stuff)
-	.block 
-		p.bold=name
-		ul
+	.block.container
+		p.wsname=name
+		fieldset(id=name name=name).main
 			each f, index in stuff
 				if index=='item[]'
-					+fields(null, f) <br/> 
+					.addButton(id=name+'Btn') +
+					+fieldList(name, f) <br/> 
 				else 
-					li.line: +smallInput(index)
+					li.line: +smallInput(name,index)
+				
+mixin fieldList(name, stuff) 
+			fieldset(id=name + 'List' name=name ).sub
+				ul(id=name)
+					each f, index in stuff
+						li.line: +smallInput(name,index)
 
 block content
 	a(href='../') repliche
 	h1= nome
-	if corpo
-		ul
-			form
-			each val, index in corpo
-				+fields(index, val) <br/>
-	else 
-		p.error Url non trovato. Impostarlo nel file listaWs.
+	button(value='Invia' id='send' onclick="JSONTest()")
+	form( encoding='multipart/form-data')
+			if corpo
+				each val, index in corpo
+					+fields(index, val) <br/>
+			else 
+				p.error Url non trovato. Impostarlo nel file listaWs.
+	form( encoding='multipart/form-data', method='post', action='./post/'+nome).hidden
+		input(type='hidden' id='hiddenInput' name='tutto') 
+		input(type='submit', value='Invia' id='hiddenSend').hidden
+	
