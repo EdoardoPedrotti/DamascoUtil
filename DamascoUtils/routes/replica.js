@@ -94,6 +94,12 @@ function replica(socket) {
 			}
 		}
 	}
+	
+	
+	//finds methods of ws Definition, definition must be JSON object
+	function recursiveFindMethodBounded(wsDefinition, depth = 3 ){
+		@TODO
+	}
 
 
 
